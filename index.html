@@ -13,18 +13,21 @@
 		<button onclick="axios()">Axios Button</button>
 
 		<!-- Script -->
+		<!-- Axios API from JSdelivr -->
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+
 		<script>
 			function ajax() {
 				fetch("https://jsonplaceholder.typicode.com/todos")
 					.then((res) => res.json())
-					.then((data) => {
-						console.log(data);
+					.then((datas) => {
+						datas.map((data) => console.log(data.title));
 					})
 					.catch((error) => {
 						console.log(error);
 					});
 			}
+            
 		</script>
 	</body>
 </html>
