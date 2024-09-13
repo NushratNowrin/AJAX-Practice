@@ -29,7 +29,8 @@
 			}
 			function ajaxWithAxios() {
 				axios.get("https://jsonplaceholder.typicode.com/todos").then((res) => {
-					console.log(res.data);
+					const datas = res.data;
+					datas.map((singleData) => console.log(singleData.title));
 				});
 			}
 		</script>
