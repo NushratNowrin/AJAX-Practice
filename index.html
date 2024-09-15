@@ -9,9 +9,13 @@
 	</head>
 	<body>
 		<h1>Introducing with AJAX</h1>
+		<p>Get Something</p>
 		<button onclick="ajaxWithFetch()">AJAX Button</button>
 		<button onclick="ajaxWithAxios()">Axios Button</button>
-
+		<br /><br />
+		<p>Post Something</p>
+		<button onclick="postWithFetch()">Fetch Post</button>
+		<button onclick="postWithAxios()">Axios Post</button>
 		<!-- Script -->
 		<!-- Axios API from JSdelivr -->
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
@@ -33,6 +37,8 @@
 					datas.map((singleData) => console.log(singleData.title));
 				});
 			}
+
+			function postWithFetch() {}
 		</script>
 	</body>
 </html>
