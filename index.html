@@ -32,6 +32,8 @@
 						console.log(error);
 					});
 			}
+
+			// Get with Axios
 			function ajaxWithAxios() {
 				axios
 					.get("https://jsonplaceholder.typicode.com/todos")
@@ -42,6 +44,7 @@
 					.catch((err) => console.log(err));
 			}
 
+			// Post with Fetch
 			function postWithFetch() {
 				const postData = {
 					title: "foo",
@@ -59,6 +62,8 @@
 					.then((json) => console.log(json))
 					.catch((err) => console.log(err));
 			}
+
+			// Post with Axios
 			function postWithAxios() {
 				const postDataAxios = {
 					title: "axios post",
