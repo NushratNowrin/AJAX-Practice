@@ -33,10 +33,13 @@
 					});
 			}
 			function ajaxWithAxios() {
-				axios.get("https://jsonplaceholder.typicode.com/todos").then((res) => {
-					const datas = res.data;
-					datas.map((singleData) => console.log(singleData.title));
-				});
+				axios
+					.get("https://jsonplaceholder.typicode.com/todos")
+					.then((res) => {
+						const datas = res.data;
+						datas.map((singleData) => console.log(singleData.title));
+					})
+					.catch((err) => console.log(err));
 			}
 
 			function postWithFetch() {
@@ -56,7 +59,17 @@
 					.then((json) => console.log(json))
 					.catch((err) => console.log(err));
 			}
-			function postWithAxios() {}
+			function postWithAxios() {
+				const postDataAxios = {
+					title: "axios post",
+					body: "axios post bar",
+					userId: 1,
+				};
+				axios
+					.post("https://jsonplaceholder.typicode.com/posts", postDataAxios)
+					.then((res) => console.log(res.data))
+					.catch((err) => console.log(err));
+			}
 		</script>
 	</body>
 </html>
