@@ -28,14 +28,12 @@
 				const status = document.querySelector(".status");
 				const country = document.getElementById("country").value;
 				status.textContent = `Searching for ${country}.....`;
-			}
+				const endpoint = `https://restcountries.com/v3.1/name/${country}`;
 
-			const endpoint = `https://restcountries.com/v3.1/name/${country}`;
-
-			function searchCountry() {
 				axios.get(endpoint).then((res) => {
 					const name = country;
-					const capital = res.capital;
+					const data = res.data[0];
+					const capital = data.capital[0];
 					console.log(name);
 					console.log(capital);
 				});
