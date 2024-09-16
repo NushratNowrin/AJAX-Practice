@@ -31,7 +31,15 @@
 			}
 
 			const endpoint = `https://restcountries.com/v3.1/name/${country}`;
-            
+
+			function searchCountry() {
+				axios.get(endpoint).then((res) => {
+					const name = country;
+					const capital = res.capital;
+					console.log(name);
+					console.log(capital);
+				});
+			}
 		</script>
 	</body>
 </html>
