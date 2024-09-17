@@ -31,7 +31,7 @@
 				status.textContent = `Searching for ${country}.....`;
 				const capitalElement = document.querySelector(".capital");
 				const populationElement = document.querySelector(".population");
-				const currencyElement = document.querySelector(".currency");
+
 				const imgElement = document.querySelector(".flag");
 				const errElement = document.querySelector(".error");
 				const endpoint = `https://restcountries.com/v3.1/name/${country}`;
@@ -48,15 +48,15 @@
 
 						const flag = data.flags.png;
 						const flagImg = `<img src=${flag} alt=${name} width='100' />`;
-						const currency = data.currencies.BDT.name;
 
+						console.log(name, capital, population, flag);
 						capitalElement.textContent = `Capital: ${capital}`;
 						populationElement.textContent = `Population: ${population}`;
-						currencyElement.textContent = `Currency: ${currency}`;
 
 						imgElement.innerHTML = flagImg;
 					})
 					.catch((err) => {
+						console.log(err);
 						const error = err.message;
 						errElement.textContent = error;
 					});
