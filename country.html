@@ -18,6 +18,7 @@
 			<p class="population"></p>
 			<p class="currency"></p>
 			<p class="flag"></p>
+			<p class="error"></p>
 		</div>
 		<!-- Axios Library -->
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
@@ -32,26 +33,33 @@
 				const populationElement = document.querySelector(".population");
 				const currencyElement = document.querySelector(".currency");
 				const imgElement = document.querySelector(".flag");
+				const errElement = document.querySelector(".error");
 				const endpoint = `https://restcountries.com/v3.1/name/${country}`;
 
-				axios.get(endpoint).then((res) => {
-					const data = res.data[0];
-					const name = data.name.common;
+				axios
+					.get(endpoint)
+					.then((res) => {
+						const data = res.data[0];
+						const name = data.name.common;
 
-					const capital = data.capital[0];
+						const capital = data.capital[0];
 
-					const population = data.population;
+						const population = data.population;
 
-					const flag = data.flags.png;
-					const flagImg = `<img src=${flag} alt=${name} width='100' />`;
-					const currency = data.currencies.BDT.name;
+						const flag = data.flags.png;
+						const flagImg = `<img src=${flag} alt=${name} width='100' />`;
+						const currency = data.currencies.BDT.name;
 
-					capitalElement.textContent = `Capital: ${capital}`;
-					populationElement.textContent = `Population: ${population}`;
-					currencyElement.textContent = `Currency: ${currency}`;
-					console.log(currency);
-					imgElement.innerHTML = flagImg;
-				});
+						capitalElement.textContent = `Capital: ${capital}`;
+						populationElement.textContent = `Population: ${population}`;
+						currencyElement.textContent = `Currency: ${currency}`;
+
+						imgElement.innerHTML = flagImg;
+					})
+					.catch((err) => {
+						const error = err.message;
+						errElement.textContent = error;
+					});
 			}
 		</script>
 	</body>
