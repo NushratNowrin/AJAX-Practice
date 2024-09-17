@@ -16,8 +16,8 @@
 			<p class="name"></p>
 			<p class="capital"></p>
 			<p class="population"></p>
-			<p class="flag"></p>
 			<p class="currency"></p>
+			<p class="flag"></p>
 		</div>
 		<!-- Axios Library -->
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
@@ -31,7 +31,7 @@
 				const capitalElement = document.querySelector(".capital");
 				const populationElement = document.querySelector(".population");
 				const currencyElement = document.querySelector(".currency");
-				const imgElement = document.querySelector(".currency");
+				const imgElement = document.querySelector(".flag");
 				const endpoint = `https://restcountries.com/v3.1/name/${country}`;
 
 				axios.get(endpoint).then((res) => {
@@ -45,6 +45,12 @@
 					const flag = data.flags.png;
 					const flagImg = `<img src=${flag} alt=${name} width='100' />`;
 					const currency = data.currencies.BDT.name;
+
+					capitalElement.textContent = `Capital: ${capital}`;
+					populationElement.textContent = `Population: ${population}`;
+					currencyElement.textContent = `Currency: ${currency}`;
+					console.log(currency);
+					imgElement.innerHTML = flagImg;
 				});
 			}
 		</script>
