@@ -2,12 +2,18 @@ function searchCountry() {
 	const result = document.querySelector(".result");
 	const status = document.querySelector(".status");
 	const country = document.getElementById("country").value;
-	status.textContent = `Searching for ${country}.....`;
 	const capitalElement = document.querySelector(".capital");
 	const populationElement = document.querySelector(".population");
 
 	const imgElement = document.querySelector(".flag");
 	const errElement = document.querySelector(".error");
+	status.textContent = `Searching for ${country}.....`;
+
+	// reset
+	capitalElement.textContent = "";
+	populationElement.textContent = "";
+	imgElement.textContent = "";
+
 	const endpoint = `https://restcountries.com/v3.1/name/${country}`;
 
 	axios
