@@ -26,12 +26,13 @@ function searchCountry() {
 			console.log(name, capital, population, flag);
 			capitalElement.textContent = `Capital: ${capital}`;
 			populationElement.textContent = `Population: ${population}`;
-
 			imgElement.innerHTML = flagImg;
 		})
 		.catch((err) => {
 			console.log(err);
-			const error = err.message;
-			errElement.textContent = error;
+			status.textContent = `${country} not found`;
+			capitalElement.textContent = "";
+			populationElement.textContent = "";
+			imgElement.textContent = "";
 		});
 }
