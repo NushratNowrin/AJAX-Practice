@@ -1,7 +1,7 @@
 function searchCountry() {
 	const result = document.querySelector(".result");
 	const status = document.querySelector(".status");
-	const country = document.getElementById("country").value;
+	const country = document.getElementById("selectCountry").value;
 	const capitalElement = document.querySelector(".capital");
 	const populationElement = document.querySelector(".population");
 
