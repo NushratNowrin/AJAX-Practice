@@ -6,7 +6,7 @@ function searchCountry() {
 	const populationElement = document.querySelector(".population");
 
 	const imgElement = document.querySelector(".flag");
-	const errElement = document.querySelector(".error");
+
 	status.textContent = `Searching for ${country}.....`;
 
 	// reset
