@@ -7,9 +7,11 @@ function populateCountries() {
 				const option = document.createElement("option");
 				option.value = country.name.common;
 				option.textContent = country.name.common;
-				countrySelect.appendChild = option;
+				// console.log(option);
+				countrySelect.appendChild(option);
 			});
 		})
 		.catch((err) => console.log(err));
 }
 window.onload = populateCountries();
+console.log("select");
