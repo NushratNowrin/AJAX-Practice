@@ -16,6 +16,7 @@ function searchCountry() {
 
 	const endpoint = `https://restcountries.com/v3.1/name/${country}`;
 
+	// axios added
 	axios
 		.get(endpoint)
 		.then((res) => {
